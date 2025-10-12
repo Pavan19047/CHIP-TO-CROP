@@ -27,12 +27,20 @@ export const mockMachines: Machine[] = [
     }
 ];
 
+// Use static dates to avoid hydration mismatches
+const now = new Date('2024-10-12T12:00:00Z');
+const yesterday = new Date('2024-10-11T12:00:00Z');
+const twoDaysAgo = new Date('2024-10-10T12:00:00Z');
+const threeDaysAgo = new Date('2024-10-09T12:00:00Z');
+const fourDaysAgo = new Date('2024-10-08T12:00:00Z');
+const fiveDaysAgo = new Date('2024-10-07T12:00:00Z');
+
 export const mockSortSessions: SortSession[] = [
   {
     id: 'SESSION-001',
     machineId: 'AG-001',
-    startTime: new Date(new Date().setDate(new Date().getDate() - 1)),
-    endTime: new Date(new Date().setDate(new Date().getDate() - 1)),
+    startTime: yesterday,
+    endTime: yesterday,
     totalSorted: 10250,
     ripeCount: 9840,
     unripeCount: 410,
@@ -41,8 +49,8 @@ export const mockSortSessions: SortSession[] = [
   {
     id: 'SESSION-002',
     machineId: 'AG-002',
-    startTime: new Date(new Date().setDate(new Date().getDate() - 2)),
-    endTime: new Date(new Date().setDate(new Date().getDate() - 2)),
+    startTime: twoDaysAgo,
+    endTime: twoDaysAgo,
     totalSorted: 15300,
     ripeCount: 14535,
     unripeCount: 765,
@@ -51,8 +59,8 @@ export const mockSortSessions: SortSession[] = [
   {
     id: 'SESSION-003',
     machineId: 'AG-001',
-    startTime: new Date(new Date().setDate(new Date().getDate() - 3)),
-    endTime: new Date(new Date().setDate(new Date().getDate() - 3)),
+    startTime: threeDaysAgo,
+    endTime: threeDaysAgo,
     totalSorted: 8900,
     ripeCount: 8010,
     unripeCount: 890,
@@ -61,8 +69,8 @@ export const mockSortSessions: SortSession[] = [
    {
     id: 'SESSION-004',
     machineId: 'AG-002',
-    startTime: new Date(new Date().setDate(new Date().getDate() - 4)),
-    endTime: new Date(new Date().setDate(new Date().getDate() - 4)),
+    startTime: fourDaysAgo,
+    endTime: fourDaysAgo,
     totalSorted: 11200,
     ripeCount: 10976,
     unripeCount: 224,
@@ -71,8 +79,8 @@ export const mockSortSessions: SortSession[] = [
    {
     id: 'SESSION-005',
     machineId: 'AG-001',
-    startTime: new Date(new Date().setDate(new Date().getDate() - 5)),
-    endTime: new Date(new Date().setDate(new Date().getDate() - 5)),
+    startTime: fiveDaysAgo,
+    endTime: fiveDaysAgo,
     totalSorted: 13450,
     ripeCount: 12000,
     unripeCount: 1450,
@@ -80,13 +88,15 @@ export const mockSortSessions: SortSession[] = [
   },
 ].map(s => ({...s, totalSorted: s.ripeCount + s.unripeCount}));
 
+// Generate static events to avoid hydration mismatches
 export const mockSortEvents: SortEvent[] = Array.from({ length: 50 }, (_, i) => {
-    const isRipe = Math.random() > 0.1;
+    const isRipe = i % 10 !== 0; // Deterministic instead of Math.random()
+    const baseTime = new Date('2024-10-12T12:00:00Z').getTime();
     return {
         id: `event-${i}`,
-        timestamp: new Date(Date.now() - i * 1000 * Math.random()),
-        fruitType: 'Tomato',
-        classification: isRipe ? 'Ripe' : 'Unripe',
-        isError: Math.random() < 0.05
+        timestamp: new Date(baseTime - i * 60000), // 1 minute intervals
+        fruitType: 'Tomato' as const,
+        classification: (isRipe ? 'Ripe' : 'Unripe') as 'Ripe' | 'Unripe',
+        isError: i % 20 === 0 // Deterministic error rate (~5%)
     }
 }).sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
