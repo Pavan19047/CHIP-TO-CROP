@@ -1,0 +1,28 @@
+{
+  "placeholderImages": [
+    {
+      "id": "user-avatar-1",
+      "description": "User avatar",
+      "imageUrl": "https://picsum.photos/seed/user-avatar-1/100/100",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "misclassified-tomato",
+      "description": "A misclassified tomato",
+      "imageUrl": "https://picsum.photos/seed/misclassified-tomato/600/400",
+      "imageHint": "tomato green"
+    },
+    {
+      "id": "ripe-tomato-sample",
+      "description": "A sample of a ripe tomato",
+      "imageUrl": "https://picsum.photos/seed/ripe-tomato/200/200",
+      "imageHint": "tomato red"
+    },
+    {
+      "id": "unripe-tomato-sample",
+      "description": "A sample of an unripe tomato",
+      "imageUrl": "https://picsum.photos/seed/unripe-tomato/200/200",
+      "imageHint": "tomato green"
+    }
+  ]
+}
