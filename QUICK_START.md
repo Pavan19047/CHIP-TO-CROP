@@ -130,6 +130,19 @@ These features work with mock data (no keys needed):
 - ✅ Results Table
 - ✅ Report Generation
 - ✅ All charts and stats
+- ✅ **Image Generation** (placeholder images - FREE)
+
+---
+
+## 🎨 Note About Image Generation
+
+The **Image Generation** feature currently uses **placeholder images** (FREE, unlimited).
+
+**Real AI image generation requires billing:**
+- See `IMAGEN_BILLING_INFO.md` for details
+- Imagen costs ~$0.02-$0.08 per image
+- Not needed for development/testing
+- Optional for production
 
 ---
 

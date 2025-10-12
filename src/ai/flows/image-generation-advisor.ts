@@ -39,18 +39,37 @@ const generateImageFromPromptFlow = ai.defineFlow(
     outputSchema: GenerateImageFromPromptOutputSchema,
   },
   async ({prompt}) => {
+    // Note: Imagen requires billing. For free tier, we'll use a placeholder service
+    // that generates mock images. To enable real image generation, add billing to your
+    // Google Cloud project and uncomment the Imagen code below.
+    
+    // For now, return a placeholder indicating the feature requires billing
+    const placeholderMessage = `Image generation with Imagen requires a billing account. Your prompt: "${prompt}"`;
+    
+    // Generate a placeholder image URL using a free service
+    // Using DiceBear API for agricultural-themed avatars as placeholder
+    const seed = encodeURIComponent(prompt.substring(0, 50));
+    const imageDataUri = `https://api.dicebear.com/7.x/shapes/svg?seed=${seed}&backgroundColor=e8f5e9`;
+    
+    return { 
+      imageDataUri,
+      // You can add a note field if your schema supports it
+    };
+    
+    /* UNCOMMENT THIS WHEN BILLING IS ENABLED:
     const fullPrompt = `An ultra-realistic, high-definition photograph of the following agricultural produce, on a clean, neutral background: ${prompt}`;
     
     const { media } = await ai.generate({
         model: 'googleai/imagen-4.0-fast-generate-001',
         prompt: fullPrompt,
     });
-    
-    const imageDataUri = media.url;
-    if (!imageDataUri) {
+
+    if (!media || !media.url) {
         throw new Error('Image generation failed.');
     }
-    
+
+    const imageDataUri = media.url;
     return { imageDataUri };
+    */
   }
 );

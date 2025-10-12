@@ -38,9 +38,9 @@ System Context: ${JSON.stringify(validated.context.systemData || {})}
 `
       : '';
 
-    // Call AI advisor flow
+    // Call AI advisor flow using gemini-2.5-flash (free tier, fast & intelligent)
     const result = await ai.generate({
-      model: 'gemini-1.5-flash',
+      model: 'googleai/gemini-2.5-flash',
       prompt: `You are an AI advisor for the Chip to Crop agricultural image analysis platform. 
 Answer the following question based on your knowledge of the system and the provided context.
 
