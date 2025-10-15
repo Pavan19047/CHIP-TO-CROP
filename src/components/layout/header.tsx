@@ -33,10 +33,13 @@ const Header = () => {
     }
 
     return (
-        <header className="flex h-16 items-center justify-between border-b bg-card px-4 md:px-6">
+        <header className="flex h-20 items-center justify-between border-b-2 border-border bg-card px-6 md:px-8 professional-shadow">
             <div className="flex items-center gap-4">
                  <SidebarTrigger className="md:hidden" />
-                 <h1 className="text-xl font-semibold font-headline">{getTitle()}</h1>
+                 <div>
+                    <h1 className="text-2xl font-bold font-heading text-foreground tracking-tight">{getTitle()}</h1>
+                    <p className="text-sm text-muted-foreground font-body">Professional Agricultural Intelligence Platform</p>
+                 </div>
             </div>
             <div className="flex items-center gap-4">
                  <div className="relative hidden md:block">

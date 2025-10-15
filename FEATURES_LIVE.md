@@ -57,6 +57,20 @@ Now has a **new Chat Advisor tab**!
 
 ---
 
+### **Tomato Ripeness Page** (`/dashboard/tomatoes`)
+Brand new **Laboro Tomato detection** experience:
+
+- **Upload & Analyse**: Drag/drop or browse a tomato image
+- **Mask R-CNN Inference**: Runs Laboro pretrained model via mmdetection
+- **Ripeness Summary**: Total, ripe, and unripe counts
+- **Type Breakdown**: Desi, Hybrid, Cherry, Laboro cultivar families
+- **Detailed Detections**: Confidence, bounding box, ripeness tag per tomato
+- **Auto Download**: Model checkpoint downloaded on first use
+
+> ⚠️ Requires `mmdet-env` virtual environment (PyTorch + MMDetection). The API handler will use `LaboroTomato/tomato_inference.py` automatically.
+
+---
+
 ## 🚀 **How to Use the New Features**
 
 ### **Try the Dashboard**

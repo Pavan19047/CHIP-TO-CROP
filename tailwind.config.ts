@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Rajdhani', 'sans-serif'],
-        body: ['PT Sans', 'sans-serif'],
+        heading: ['Merriweather', 'Georgia', 'serif'],
+        body: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

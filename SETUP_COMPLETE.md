@@ -126,20 +126,13 @@ CHIP TO CROP/
 
 ### Web Dashboard
 - ✅ **AI Chat Advisor** - Ask farming questions (Gemini 2.5 Flash)
-- ✅ **Image Analysis** - Analyze crop images
+- ✅ **Image Analysis** - Upload and analyze crop images
 - ✅ **Image Comparison** - Compare before/after
-- ✅ **Image Generation** - Generate placeholder images (DiceBear)
+- ✅ **Image Generation** - AI-powered placeholder images
+- ✅ **Tomato Ripeness** - Laboro Mask R-CNN inference UI
 - ✅ **Data Collection** - Upload images for labeling
 - ✅ **Analytics** - View detection statistics
 - ✅ **Reports** - Generate PDF reports
-
-### Python Detection
-- ✅ **Webcam Detection** - Real-time fruit detection
-- ✅ **Single Image** - Analyze one image
-- ✅ **Batch Processing** - Process folders of images
-- ✅ **Confidence Scoring** - Get prediction confidence
-- ✅ **Visual Output** - Annotated images with labels
-- ✅ **5 Fruit Classes** - Apple, Banana, Grapes, Mango, Strawberry
 
 ---
 

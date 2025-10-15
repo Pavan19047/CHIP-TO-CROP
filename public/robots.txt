@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow sensitive areas
+Disallow: /api/
+Disallow: /dashboard/settings
+
+# Sitemap
+Sitemap: https://agrograde-insights.com/sitemap.xml

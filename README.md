@@ -15,6 +15,7 @@
 - 📸 Image upload, analysis, and comparison
 - 📊 Real-time analytics and charts
 - 🎨 AI image generation (DiceBear placeholders)
+- 🍅 Tomato ripeness detection (Laboro Mask R-CNN)
 - 📈 Report generation and statistics
 
 ### 2️⃣ Fruit Detection (Python)
@@ -31,7 +32,7 @@
 ```bash
 npm install
 npm run dev
-# Open http://localhost:3000
+# Open http://localhost:3000 (tomato ripeness: /dashboard/tomatoes)
 ```
 
 **Need API Key?** → Read [`QUICK_START.md`](QUICK_START.md) (5 minutes)
